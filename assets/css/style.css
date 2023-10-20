@@ -1,0 +1,54 @@
+
+:root{
+    --sky: rgb(139, 206, 223);
+}
+
+input{
+    text-align: center;
+}
+
+#start-page{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+h2{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+p{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#start-btn{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 30px;
+}
+
+#quiz{
+    display: none;
+}
+
+#timer{
+    font-size: 30px;
+    text-shadow: 1px 1px black;
+    text-align: center;
+}
+
+#result{
+    display: none;
+}
+
+#end-quiz{
+    display: none;
+}
+
+#score-container{
+    display: none;
+}
