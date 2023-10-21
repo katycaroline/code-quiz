@@ -18,12 +18,12 @@
 
         <section id = "quiz">
             <div id = "timer">Time Left: </div>
-            <div id = "quiz-questions"><p>Question?</p></div>
+            <div id = "question-container"><p>Question?</p></div>
             <div class="d-grid gap-2">
-                <button id = "a" type="button" class="btn btn-primary">A</button>
-                <button id = "b" type="button" class="btn btn-primary">B</button>
-                <button id = "c" type="button" class="btn btn-primary">C</button>
-                <button id = "d" type="button" class="btn btn-primary">D</button>
+                <button id = "a" onclick = "isCorrect('a')" type="button" class="btn btn-primary">A</button>
+                <button id = "b" onclick = "isCorrect('b')" type="button" class="btn btn-primary">B</button>
+                <button id = "c" onclick = "isCorrect('c')" type="button" class="btn btn-primary">C</button>
+                <button id = "d" onclick = "isCorrect('d')" type="button" class="btn btn-primary">D</button>
             </div>
             <div id = "result"></div>
         </section>

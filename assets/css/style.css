@@ -1,8 +1,4 @@
 
-:root{
-    --sky: rgb(139, 206, 223);
-}
-
 input{
     text-align: center;
 }
@@ -37,7 +33,6 @@ p{
 
 #timer{
     font-size: 30px;
-    text-shadow: 1px 1px black;
     text-align: center;
 }
 
