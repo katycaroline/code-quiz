@@ -16,6 +16,9 @@ var initials = document.getElementById("initials");
 var submitBtn = document.getElementById("submit");
 var scorePage = document.getElementById("score-container");
 var againBtn = document.getElementById("go-again");
+var savedUserInitials = document.getElementById("user-initials");
+var savedUserScore = document.getElementById("user-score");
+var clearScoresBtn = document.getElementById("clear-scores");
 
 // Declaring global variables.
 var timeLeft = 60;
@@ -105,24 +108,22 @@ function score(){
     endScore.innerHTML = "Your score is " + userScore + " out of " + quizQuestions.length + "."; 
 }
 
-// Makes it so when the user clicks the start button, the quiz starts
-startBtn.addEventListener("click", quizStart);
-
-// Makes it so when the user clicks the submit button, it displays the prompt to input initials. Then, it saves the users score and initials and calls the function to generate the page of high scores. 
-submitBtn.addEventListener("click", function highscore(){
-    if(initials.value === ""){
-        window.alert("Please input your initials.");
-        return;
-    }else{
-        // needs code 
-    }
-});
-
 // Creates a loop where new scores and initials are added to a list.
 function generateScores(){
-   // needs code 
+   savedUserInitials.innerHTML = "";
+   savedUserScore.innerHTML = "";
+   var allScores = JSON.parse(localStorage.getItem("savedScores")) || [];
+   for (i=0; i < allScores.length; i++){
+    var newName = document.createElement("li");
+    var newScore = document.createElement("li");
+    newName.textContent = allScores[i].name;
+    newScore.textContent = allScores[i].score;
+    savedUserInitials.appendChild(newName);
+    savedUserScore.appendChild(newScore);
+   }
 }
 
+// Shows the score page and calls the generateScores function
 function showScores(){
     startPage.style.display = "none";
     endQuiz.style.display = "none";
@@ -137,11 +138,10 @@ function isCorrect (input){
    var correct = quizQuestions[currentQuestionIndex].correctAnswer;
    if (input === correct && currentQuestionIndex !== lastQuestionIndex){
     userScore++;
-    window.alert("Correct!!");
     currentQuestionIndex++;
     generateQA();
    }else if(input !== correct && currentQuestionIndex !== lastQuestionIndex){
-    window.alert("Nope, try again.");
+    timeLeft = timeLeft - 10;
     currentQuestionIndex++;
     generateQA();
    }else{
@@ -149,4 +149,51 @@ function isCorrect (input){
    }
 }
 
+// Clears all scores and text from local storage
+function clearScores(){
+    window.localStorage.clear();
+    savedUserInitials.textContent = "";
+    savedUserScore.textContent = "";
+}
+
+// Resets multiple variables and makes the starting page display
+function redo(){
+    endQuiz.style.display = "none";
+    scorePage.style.display = "none";
+    startPage.style.display = "flex";
+    timeLeft = 60;
+    currentQuestionIndex = 0;
+    userScore = 0;
+    
+}
+
+// Event listener buttons, on click it executes their specified functions.
+startBtn.addEventListener("click", quizStart);
 scoreBtn.addEventListener("click", showScores);
+clearScoresBtn.addEventListener("click", clearScores);
+againBtn.addEventListener("click", redo);
+
+// Makes it so when the user clicks the submit button, it displays the prompt to input initials. Then, it saves the users score and initials and calls the function to generate the page of scores. 
+submitBtn.addEventListener("click", function submitScore(){
+    if(initials.value === ""){
+        window.alert("Please input your initials.");
+        return;
+    }else{
+        var currentUser = initials.value.trim();
+        var savedScores = JSON.parse(localStorage.getItem("savedScores")) || [];
+        var currentScore = {
+            name: currentUser,
+            score: userScore
+        };
+
+        // CSS styling
+        startPage.style.display = "none";
+        endQuiz.style.display = "none";
+        scorePage.style.display = "block";
+        scorePage.style.textAlign = "center";
+
+        savedScores.push(currentScore);
+        localStorage.setItem("savedScores", JSON.stringify(savedScores));
+        generateScores();
+    }
+});

@@ -8,38 +8,44 @@
     <link rel = "stylesheet" href = "assets/css/style.css"/>
 </head>
 <body>
+    <!--A container for the starting page of the program. This displays on page load.-->
     <div class = "container">
         <section id = "start-page">
             <h2>Coding Quiz!</h2>
             <p>Try to answer the questions correctly before the timer runs out. Good luck!</p>
+            <!--Buttons for starting the quiz and viewing scores. They utilize Bootstrap for their CSS properties-->
             <button id = "start-btn" type="button" class="btn btn-success btn-lg">Click to Start!</button>
             <button id = "high-score-btn" type="button" class="btn btn-info btn-lg">High Scores</button>
         </section>
 
+        <!--A container for the quiz section of the program. Contains a timer, a question, and four buttons utilizing Bootstrap for their CSS properties-->
         <section id = "quiz">
             <div id = "timer">Time Left: </div>
             <div id = "question-container"><p>Question?</p></div>
             <div class="d-grid gap-2">
-                <button id = "a" onclick = "isCorrect('a')" type="button" class="btn btn-primary">A</button>
-                <button id = "b" onclick = "isCorrect('b')" type="button" class="btn btn-primary">B</button>
-                <button id = "c" onclick = "isCorrect('c')" type="button" class="btn btn-primary">C</button>
-                <button id = "d" onclick = "isCorrect('d')" type="button" class="btn btn-primary">D</button>
+                <button id = "a" onclick = "isCorrect('a')" type="button" class="btn btn-primary"></button>
+                <button id = "b" onclick = "isCorrect('b')" type="button" class="btn btn-primary"></button>
+                <button id = "c" onclick = "isCorrect('c')" type="button" class="btn btn-primary"></button>
+                <button id = "d" onclick = "isCorrect('d')" type="button" class="btn btn-primary"></button>
             </div>
-            <div id = "result"></div>
         </section>
 
+        <!--A container for the after quiz section of the program. It has an end-score div for displaying the total score, and an input field and a submit button.-->
         <section id = "end-quiz">
             <div id = "end-score"></div>
             <input size = "15" placeholder="Enter your initials" name="intials" id="initials"/>
             <button id = "submit" type="button" class="btn btn-primary btn-lg">Submit</button>
         </section>
 
+        <!--A container for the scores section of the program. It displays a scores header, then the inputted initials and user score. It also contains two buttons.-->
         <section id = "score-container">
             <div id = "score-page">
                 <div id = "score-header">
-                    <h3>Initials</h3>
-                    <h3>Score</h3>
+                    <h3>Scores</h3>
+                    <div id = "user-initials"></div>
+                    <div id = "user-score"></div>
                 </div>
+                <button id = "clear-scores" class="btn btn-success mx-1 my-1 d-inline-block">Clear scores</button>
                 <button id = "go-again" type="button" class="btn btn-primary btn-lg">Go Again?</button>
             </div>
         </section>

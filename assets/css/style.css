@@ -18,7 +18,8 @@ h2{
 
 p{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 30px;
+    text-align: center;
 }
 
 #start-btn{
@@ -29,6 +30,8 @@ p{
 
 #quiz{
     display: none;
+    margin-top: 200px;
+    font-size: 20px;
 }
 
 #timer{
@@ -47,3 +50,28 @@ p{
 #score-container{
     display: none;
 }
+
+li{
+    list-style-type: none;
+}
+
+#score-page{
+    margin-top: 200px;
+    font-size: 20px;
+}
+
+h3{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#user-initials{
+    display: inline-block;
+    text-align: center;
+}
+
+#user-score{
+    float: right;
+    padding-right: 430px;
+}
+
