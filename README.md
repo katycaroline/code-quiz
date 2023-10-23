@@ -22,3 +22,6 @@ N/A
 MIT License
 
 ## Deployment
+
+![Image of the deployed "code-quiz" website](assets/deployed-code-quiz.png)
+Link to the deployed website: https://katycaroline.github.io/code-quiz/
