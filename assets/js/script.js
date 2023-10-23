@@ -27,33 +27,40 @@ var userScore = 0;
 
 // Declaring object for the quiz questions
 var quizQuestions = [{
-    question: "This is a placeholder question?",
-    a: "Correct",
-    b: "Answer",
-    c: "Answer",
-    d: "Answer",
+    question: "If you want to link a stylesheet in your HTML file, where should you put it?",
+    a: "At the end of the head tag",
+    b: "At the beginning of the body tag",
+    c: "At the end of the body tag",
+    d: "You can't link a stylesheet",
     correctAnswer: "a"},
     {
-    question: "This is a placeholder question?",
-    a: "Answer",
-    b: "Answer",
-    c: "Correct",
-    d: "Answer",
+    question: "In CSS, which of these is the correct way to call the start-page class?",
+    a: "start-page",
+    b: "#start-page",
+    c: ".start-page",
+    d: "startPage",
     correctAnswer: "c"},
     {
-    question: "This is a placeholder question?",
-    a: "Answer",
-    b: "Correct",
-    c: "Answer",
-    d: "Answer",
+    question: "How many primitive data types are there in Javascript?",
+    a: "4",
+    b: "5",
+    c: "6",
+    d: "7",
     correctAnswer: "b"},
     {
-    question: "This is a placeholder question?",
-    a: "Answer",
-    b: "Answer",
-    c: "Answer",
-    d: "Answer",
-    correctAnswer: "a"}
+    question: "Which of these is not a data type in Javascript?",
+    a: "Char",
+    b: "String",
+    c: "Number",
+    d: "Boolean",
+    correctAnswer: "a"},
+    {
+    question: "If you wanted to check if both the value and data type of two variables were the same, which of these should you use?",
+    a: "=",
+    b: "!=",
+    c: "==",
+    d: "===",
+    correctAnswer: "d"}
 ];
 
 // Declaring more global variables
